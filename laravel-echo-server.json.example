@@ -1,0 +1,39 @@
+{
+	"authHost": "http://caturjawa.test",
+	"authEndpoint": "/broadcasting/auth",
+	"clients": [
+		{
+			"appId": "d9fb10f3d101b351",
+			"key": "4591671546d39e886ed45db7f6452c50"
+		}
+	],
+	"database": "redis",
+	"databaseConfig": {
+		"redis": {
+      "port": "6379",
+      "host": "redis"
+    },
+		"sqlite": {
+			"databasePath": "/database/laravel-echo-server.sqlite"
+		}
+	},
+	"devMode": true,
+	"host": null,
+	"port": "6001",
+	"protocol": "http",
+	"socketio": {},
+	"sslCertPath": "",
+	"sslKeyPath": "",
+	"sslCertChainPath": "",
+	"sslPassphrase": "",
+	"subscribers": {
+		"http": true,
+		"redis": true
+	},
+	"apiOriginAllow": {
+		"allowCors": true,
+		"allowOrigin": "http://localhost:8000",
+		"allowMethods": "GET, POST",
+		"allowHeaders": "Origin, Content-Type, X-Auth-Token, X-Requested-With, Accept, Authorization, X-CSRF-TOKEN, X-Socket-Id"
+	}
+}

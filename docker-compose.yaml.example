@@ -1,0 +1,45 @@
+version: '3'
+services:
+  php:
+      image: chialab/php:7.3-fpm
+      volumes:
+          - .:/var/www/app
+      networks:
+      - default
+  web:
+      image: nginx
+      ports:
+      - "80:80"
+      volumes:
+      - .:/var/www/app
+      - ./containers/nginx/site.conf:/etc/nginx/conf.d/default.conf
+      command: [nginx-debug, '-g', 'daemon off;']
+      networks:
+      - default
+  db:
+      image: mariadb
+      networks:
+      - default
+      environment:
+          - "MYSQL_ROOT_PASSWORD=${DB_PASSWORD}"
+          - "MYSQL_DATABASE=${DB_DATABASE}"
+      volumes:
+      - ./containers/mysql/data:/var/lib/mysql
+      - ./containers/mysql/conf.d:/etc/mysql/conf.d
+      ports:
+      - "4330:3306"
+  redis:
+      image: redis
+      networks:
+        - default
+  node:
+      image: node
+      networks:
+      - default
+      volumes:
+          - .:/var/www/app
+      working_dir: /var/www/app
+      command: "npm run echo"
+networks:
+  default:
+      driver: bridge
