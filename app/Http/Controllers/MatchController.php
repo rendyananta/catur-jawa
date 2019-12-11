@@ -14,16 +14,26 @@ use App\Match;
  */
 class MatchController extends Controller
 {
+    /**
+     * MatchController constructor.
+     */
     public function __construct()
     {
-        $this->middleware = 'auth';
+        $this->middleware('auth');
     }
 
+    /**
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function index()
     {
         return view('lobby');
     }
 
+    /**
+     * @param Match $match
+     * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
+     */
     public function show(Match $match)
     {
         return view('game', [

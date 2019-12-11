@@ -28,4 +28,5 @@ Route::group(['middleware' => 'auth:api', 'prefix' => 'game'], function () {
     Route::post('/', 'MatchController@store');
     Route::get('/{match}', 'MatchController@show');
     Route::patch('/{match}/accept', 'MatchController@accept');
+    Route::patch('/{match}/move', 'MatchController@move');
 });

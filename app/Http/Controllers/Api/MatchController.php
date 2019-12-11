@@ -7,6 +7,7 @@ namespace App\Http\Controllers\Api;
 use App\Events\InvitationAccepted;
 use App\Events\InvitationCreated;
 use App\Http\Controllers\Controller;
+use App\Jobs\CheckMovement;
 use App\Match;
 use Illuminate\Http\Request;
 
@@ -42,6 +43,10 @@ class MatchController extends Controller
         ]);
     }
 
+    /**
+     * @param Match $match
+     * @return \Illuminate\Http\JsonResponse
+     */
     public function show(Match $match)
     {
         return response()->json([
@@ -68,6 +73,26 @@ class MatchController extends Controller
 
         return response()->json([
             'message' => 'Invitation Accepted'
+        ]);
+    }
+
+    /**
+     * @param Request $request
+     * @param Match $match
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \Illuminate\Validation\ValidationException
+     */
+    public function move(Request $request, Match $match)
+    {
+        $this->validate($request, [
+            'states' => 'required|array',
+            'from' => 'required|array'
+        ]);
+
+        $job = $this->dispatchNow(new CheckMovement($match));
+
+        return response()->json([
+            'message' => $job
         ]);
     }
 }

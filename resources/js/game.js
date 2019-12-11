@@ -7,8 +7,8 @@ let config = {
         height: 980
     },
     board: {
-        columns: 10,
-        rows: 10
+        columns: 40,
+        rows: 40
     }
 };
 
@@ -35,6 +35,10 @@ function getMatch(matchId) {
         .then(res => {
             match = res.data.data;
 
+            if (match.states !== undefined && match.states !== null && match.states !== '') {
+                gridsState = match.states;
+            }
+
             playerX = match.inviter_id;
             playerY = match.invitee_id;
 
@@ -52,15 +56,29 @@ function getUser() {
         })
 }
 
+function sendMovement(payload) {
+    axios.patch('/api/game/' + match.id + '/move', {
+        from: payload.grid,
+        states: gridsState
+    }).then(res => {
+        console.log(res.data)
+    });
+}
+
 function sendGridUpdate(x, y, gridState) {
+    const payload = {
+        grid: {
+            x: x,
+            y: y,
+            state: gridState
+        }
+    };
+
+    console.log('payload', payload);
+
+    sendMovement(payload);
     Echo.private(`match.${match.id}`)
-        .whisper('turn', {
-            grid: {
-                x: x,
-                y: y,
-                state: gridState
-            }
-        })
+        .whisper('turn', payload)
 }
 
 function isPlayerX() {
@@ -74,6 +92,8 @@ function isPlayerO() {
 function receiveGridUpdate(match) {
     Echo.private(`match.${match.id}`)
         .listenForWhisper('turn', e => {
+            console.log(e.grid);
+
             gridsState[e.grid.x][e.grid.y] = e.grid.state;
             drawSquare(e.grid.state);
 
@@ -109,10 +129,15 @@ function getGridFromMouse(x, y) {
     });
 }
 
-function getGridIndex(gridItem) {
+function getGridIndex(mouse, gridItem) {
+    console.log('mouse', mouse);
+    console.log({
+        x: (mouse.x - gridItem.x) / getBoxWidth(),
+        y: (mouse.y - gridItem.y) / getBoxHeight()
+    });
     return {
-        x: Math.floor(gridItem.x / getBoxWidth()),
-        y: Math.floor(gridItem.y / getBoxHeight())
+        x: Math.floor((mouse.x - gridItem.x) / getBoxWidth()),
+        y: Math.floor((mouse.y - gridItem.y) / getBoxHeight())
     }
 }
 
@@ -122,7 +147,9 @@ function registerMouseEvent() {
 
         if (mouse.x >= boardX && mouse.x <= boardWidth && mouse.y >= boardY && mouse.y <= boardHeight) {
             let grid = getGridFromMouse(mouse.x, mouse.y);
-            let gridIndex = getGridIndex(grid);
+            let gridIndex = getGridIndex(mouse, grid);
+
+            console.log(gridIndex);
 
             // If it has been filled, so end it
             if (gridsState[gridIndex.x][gridIndex.y].content !== undefined && gridsState[gridIndex.x][gridIndex.y].content !== null) {
@@ -145,8 +172,11 @@ function registerMouseEvent() {
                 drawSquare(grid, 'O');
                 turn = 'X';
                 sendGridUpdate(gridIndex.x, gridIndex.y, gridsState[gridIndex.x][gridIndex.y])
+            } else {
+                console.log('not your turn')
             }
         }
+
     });
 }
 

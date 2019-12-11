@@ -2,8 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c6f63d34-b3e0-4a99-a5c5-99b62e9bd09e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Api/MatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Api/MatchController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MatchController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MatchController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Match.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Match.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-echo-server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-echo-server.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -183,6 +189,9 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="editor.preferences.completion" />
   </component>
   <component name="RecentsManager">
@@ -230,6 +239,18 @@
                 <item name="Compose: docker-compose.yaml" type="9fbbdea:ServiceModel$ServiceNode" />
                 <item name="node" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="Compose: docker-compose.yaml" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="php" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="Compose: docker-compose.yaml" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="redis" type="9fbbdea:ServiceModel$ServiceNode" />
+              </path>
             </expand>
             <select />
           </treeState>
@@ -250,7 +271,8 @@
       <workItem from="1575719362773" duration="23901000" />
       <workItem from="1575791307407" duration="622000" />
       <workItem from="1575804183032" duration="41000" />
-      <workItem from="1575879160768" duration="8704000" />
+      <workItem from="1575879160768" duration="9135000" />
+      <workItem from="1576047748857" duration="6494000" />
     </task>
     <servers />
   </component>
@@ -262,6 +284,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="540" y="178" key="#CLI_Interpreters/0.0.1920.1050@0.0.1920.1050" timestamp="1575720058921" />
+    <state x="552" y="182" key="#Project_Structure" timestamp="1576049908897">
+      <screen x="0" y="0" width="1920" height="1050" />
+    </state>
+    <state x="552" y="182" key="#Project_Structure/0.0.1920.1050@0.0.1920.1050" timestamp="1576049908897" />
     <state x="552" y="182" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1575725107503">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -298,21 +324,21 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1293" height="264" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1575736725820" />
-    <state x="758" y="322" key="NewPhpClassDialog" timestamp="1575724190698">
+    <state x="758" y="322" key="NewPhpClassDialog" timestamp="1576052581205">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="758" y="322" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1575724190698" />
+    <state x="758" y="322" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576052581205" />
     <state x="461" y="166" key="SettingsEditor" timestamp="1575723818060">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="166" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1575723818060" />
-    <state x="636" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1575879163756">
+    <state x="636" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576047795749">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="636" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1575879163756" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1575879908181">
+    <state x="636" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576047795749" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1576053092369">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1575879908181" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1576053092369" />
   </component>
 </project>
