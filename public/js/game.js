@@ -105,8 +105,8 @@ var canvasElement = document.getElementById('board');
 var canvasContext = canvasElement.getContext('2d');
 var config = {
   canvas: {
-    width: 980,
-    height: 980
+    width: 1440,
+    height: 1440
   },
   board: {
     columns: 40,
@@ -129,7 +129,7 @@ var gridsState = _toConsumableArray(new Array(config.board.rows)).map(function (
 var turn = 'X';
 var user = null;
 var match = null;
-var playerY = null;
+var playerX = null;
 var playerO = null;
 var matchId = canvasElement.getAttribute('data-match-id');
 
@@ -142,7 +142,9 @@ function getMatch(matchId) {
     }
 
     playerX = match.inviter_id;
-    playerY = match.invitee_id;
+    playerO = match.invitee_id;
+    console.log(playerX);
+    console.log(playerO);
     registerMouseEvent();
     createBoard();
     receiveGridUpdate(match);

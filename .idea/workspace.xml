@@ -3,7 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c6f63d34-b3e0-4a99-a5c5-99b62e9bd09e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/database/migrations/2019_12_11_073515_add_states_column_in_matches_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/database/migrations/2019_12_11_073515_add_states_column_in_matches_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Jobs/CheckMovement.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Jobs/CheckMovement.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Match.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Match.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/AuthServiceProvider.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/game.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/resources/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/game.js" afterDir="false" />
     </list>
@@ -222,30 +224,16 @@
             <expand>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
+                <item name="root:catur_jawa@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+              </path>
+              <path>
+                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
+                <item name="root:catur_jawa@localhost" type="7427dc5b:ServiceModel$ServiceGroupNode" />
+                <item name="com.intellij.database.console.session.MessageBusSession@767acdcd" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
               <path>
                 <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
                 <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
-                <item name="Compose: docker-compose.yaml" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
-                <item name="Compose: docker-compose.yaml" type="9fbbdea:ServiceModel$ServiceNode" />
-                <item name="node" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
-                <item name="Compose: docker-compose.yaml" type="9fbbdea:ServiceModel$ServiceNode" />
-                <item name="php" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
-                <item name="Compose: docker-compose.yaml" type="9fbbdea:ServiceModel$ServiceNode" />
-                <item name="redis" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
             </expand>
             <select />
@@ -268,7 +256,7 @@
       <workItem from="1575791307407" duration="622000" />
       <workItem from="1575804183032" duration="41000" />
       <workItem from="1575879160768" duration="9135000" />
-      <workItem from="1576047748857" duration="9791000" />
+      <workItem from="1576047748857" duration="12661000" />
     </task>
     <task id="LOCAL-00001" summary="add winner checking">
       <created>1576055341442</created>
@@ -284,7 +272,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576055350172</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="fix grid index checking">
+      <created>1576059656111</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1576059656111</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -292,7 +287,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="add winner checking" />
-    <option name="LAST_COMMIT_MESSAGE" value="add winner checking" />
+    <MESSAGE value="fix grid index checking" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix grid index checking" />
   </component>
   <component name="WindowStateProjectService">
     <state x="540" y="178" key="#CLI_Interpreters" timestamp="1575720058921">
@@ -323,26 +319,26 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1575728475931" />
-    <state x="583" y="33" key="CommitChangelistDialog2" timestamp="1576055349469">
+    <state x="583" y="33" key="CommitChangelistDialog2" timestamp="1576059655625">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="583" y="33" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576055349469" />
-    <state width="1293" height="264" key="GridCell.Tab.0.bottom" timestamp="1575736725820">
+    <state x="583" y="33" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576059655625" />
+    <state width="1293" height="264" key="GridCell.Tab.0.bottom" timestamp="1576062615855">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1293" height="264" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1575736725820" />
-    <state width="1293" height="264" key="GridCell.Tab.0.center" timestamp="1575736725820">
+    <state width="1293" height="264" key="GridCell.Tab.0.bottom/0.0.1920.1050@0.0.1920.1050" timestamp="1576062615855" />
+    <state width="1293" height="264" key="GridCell.Tab.0.center" timestamp="1576062615854">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1293" height="264" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1575736725820" />
-    <state width="1293" height="264" key="GridCell.Tab.0.left" timestamp="1575736725820">
+    <state width="1293" height="264" key="GridCell.Tab.0.center/0.0.1920.1050@0.0.1920.1050" timestamp="1576062615854" />
+    <state width="1293" height="264" key="GridCell.Tab.0.left" timestamp="1576062615854">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1293" height="264" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1575736725820" />
-    <state width="1293" height="264" key="GridCell.Tab.0.right" timestamp="1575736725820">
+    <state width="1293" height="264" key="GridCell.Tab.0.left/0.0.1920.1050@0.0.1920.1050" timestamp="1576062615854" />
+    <state width="1293" height="264" key="GridCell.Tab.0.right" timestamp="1576062615855">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state width="1293" height="264" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1575736725820" />
+    <state width="1293" height="264" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576062615855" />
     <state x="758" y="322" key="NewPhpClassDialog" timestamp="1576052581205">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -351,17 +347,17 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="166" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1575723818060" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1576055352989">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1576059657924">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576055352989" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576059657924" />
     <state x="636" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576047795749">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="636" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576047795749" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1576053092369">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1576060562762">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1576053092369" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1576060562762" />
   </component>
 </project>

@@ -3,8 +3,8 @@ let canvasContext = canvasElement.getContext('2d');
 
 let config = {
     canvas: {
-        width: 980,
-        height: 980
+        width: 1440,
+        height: 1440
     },
     board: {
         columns: 40,
@@ -26,7 +26,7 @@ let gridsState = [...new Array(config.board.rows)].map(() => Array(config.board.
 let turn = 'X';
 let user = null;
 let match = null;
-let playerY = null;
+let playerX = null;
 let playerO = null;
 let matchId = canvasElement.getAttribute('data-match-id');
 
@@ -40,7 +40,10 @@ function getMatch(matchId) {
             }
 
             playerX = match.inviter_id;
-            playerY = match.invitee_id;
+            playerO = match.invitee_id;
+
+            console.log(playerX);
+            console.log(playerO);
 
             registerMouseEvent();
             createBoard();

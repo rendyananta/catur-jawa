@@ -17,7 +17,7 @@ class Match extends Model
     protected $table = 'matches';
 
     protected $fillable = [
-        'is_draw', 'states'
+        'is_draw', 'state'
     ];
 
     public function inviter()

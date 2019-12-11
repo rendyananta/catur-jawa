@@ -27,11 +27,6 @@ class CheckMovement
      */
     public $match;
 
-    /**
-     * @var array
-     */
-    public $winner;
-
     public function __construct(Match $match)
     {
         $this->request = request();
@@ -43,14 +38,9 @@ class CheckMovement
      */
     public function handle()
     {
-        if (! Cache::has('match_movement_' . $this->match->id)) {
-            Cache::put('match_movement_' . $this->match->id, $this->request->input('states'), 60 * 30);
-        }
+        Cache::put('match_movement_' . $this->match->id, $this->request->input('states'), 60 * 30);
 
-        $this->winner = $this->getWinLines();
-
-        if (count($this->winner) > 0) {
-
+        if (count($this->getWinLines()) > 0) {
             $this->match->winner()->associate($this->request->user());
 
             if ($this->request->user()->id === $this->match->invitee->id) {
@@ -59,7 +49,7 @@ class CheckMovement
                 $this->match->loser()->associate($this->match->invitee_id);
             }
             $this->match->fill([
-                'states' => $this->request->input('states')
+                'state' => $this->request->input('states')
             ]);
             $this->match->save();
             event(new WinnerSelected($this->match->refresh()));
@@ -80,23 +70,27 @@ class CheckMovement
 
         $states = Cache::get('match_movement_' . $this->match->id);
 
+        $fromX = $this->request->input('from.x');
+        $fromY = $this->request->input('from.y');
+
         for ($dist = 0; $dist <= 4; $dist++) {
-            $x = $this->request->input('from.x') + $dx * $dist;
-            $y = $this->request->input('from.y') + $dy * $dist;
+            $x = $fromX + $dx * $dist;
+            $y = $fromY + $dy * $dist;
+
             $to = !empty($states[$x])
                 && !empty($states[$x][$y])
                 && !empty($states[$x][$y]['content'])
-                && !empty($states[$x][$y]['user_id']);
+                && !empty($states[$x][$y]['user']);
 
             if (!$to) break;
-            if ($to['user_id'] !== $this->request->user()->id) break;
+            if ($states[$x][$y]['user'] !== $this->request->user()->id) break;
 
             $lastDist = $dist;
-            $lastTo = $to;
+            $lastTo = $states[$x][$y];
         }
 
         return [
-            'dist' => $lastTo,
+            'dist' => $lastTo ? $lastDist : 0,
             'x' => $lastDist['x'] ?? $this->request->input('from.x'),
             'y' => $lastDist['y'] ?? $this->request->input('from.y')
         ];
