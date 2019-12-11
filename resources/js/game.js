@@ -35,8 +35,8 @@ function getMatch(matchId) {
         .then(res => {
             match = res.data.data;
 
-            if (match.states !== undefined && match.states !== null && match.states !== '') {
-                gridsState = match.states;
+            if (match.state !== undefined && match.state !== null && match.state !== '') {
+                gridsState = match.state;
             }
 
             playerX = match.inviter_id;
@@ -92,8 +92,6 @@ function isPlayerO() {
 function receiveGridUpdate(match) {
     Echo.private(`match.${match.id}`)
         .listenForWhisper('turn', e => {
-            console.log(e.grid);
-
             gridsState[e.grid.x][e.grid.y] = e.grid.state;
             drawSquare(e.grid.state);
 
@@ -124,32 +122,35 @@ function getMousePosition(event) {
 }
 
 function getGridFromMouse(x, y) {
-    return grids.reduce((a, v) => a.concat(v)).find(k => {
-        return x >= k.x && x <= k.xMax && y >= k.y && y <= k.yMax;
-    });
+    return grids.flat(2).find(i => x >= i.x && x <= i.xMax && y >= i.y && y <= i.yMax);
 }
 
-function getGridIndex(mouse, gridItem) {
-    console.log('mouse', mouse);
-    console.log({
-        x: (mouse.x - gridItem.x) / getBoxWidth(),
-        y: (mouse.y - gridItem.y) / getBoxHeight()
-    });
-    return {
-        x: Math.floor((mouse.x - gridItem.x) / getBoxWidth()),
-        y: Math.floor((mouse.y - gridItem.y) / getBoxHeight())
+function getGridIndex(gridItem) {
+    let x = null;
+    let y = null;
+    for (let i = 0; i < config.board.columns; i++) {
+        for (let j = 0; j < config.board.rows; j++) {
+            if (grids[i][j] === gridItem) {
+                x = i;
+                y = j;
+                break;
+            }
+        }
     }
+
+    return {
+        x: x,
+        y: y
+    };
 }
 
 function registerMouseEvent() {
     canvasElement.addEventListener('mousedown', function (event) {
         let mouse = getMousePosition(event);
 
-        if (mouse.x >= boardX && mouse.x <= boardWidth && mouse.y >= boardY && mouse.y <= boardHeight) {
+        if (mouse.x >= getBoxWidth() && mouse.x <= (config.canvas.width - getBoxWidth()) && mouse.y >= getBoxHeight() && mouse.y <= (config.canvas.height - getBoxHeight())) {
             let grid = getGridFromMouse(mouse.x, mouse.y);
-            let gridIndex = getGridIndex(mouse, grid);
-
-            console.log(gridIndex);
+            let gridIndex = getGridIndex(grid);
 
             // If it has been filled, so end it
             if (gridsState[gridIndex.x][gridIndex.y].content !== undefined && gridsState[gridIndex.x][gridIndex.y].content !== null) {

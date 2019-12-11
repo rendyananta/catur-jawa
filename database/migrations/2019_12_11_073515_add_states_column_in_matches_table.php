@@ -14,7 +14,7 @@ class AddStatesColumnInMatchesTable extends Migration
     public function up()
     {
         Schema::table('matches', function (Blueprint $table) {
-            $table->json('states')->default(null)->after('accepted');
+            $table->json('state')->default(null)->after('accepted');
         });
     }
 
@@ -26,7 +26,7 @@ class AddStatesColumnInMatchesTable extends Migration
     public function down()
     {
         Schema::table('matches', function (Blueprint $table) {
-            $table->dropColumn('states');
+            $table->dropColumn('state');
         });
     }
 }
