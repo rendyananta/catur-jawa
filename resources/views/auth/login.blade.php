@@ -1,48 +1,58 @@
 @extends('layouts.skeleton')
 
 @section('body')
-    <section class="hero is-primary is-bold is-fullheight">
+    <div class="hero is-link is-fullheight">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title">
-                    Catur Jawa
-                </h1>
-                <div class="columns">
-                    <div class="column is-4">
-                        <div class="card">
-                            <header class="card-header">
-                                <p class="card-header-title">
-                                    Masuk
-                                </p>
-                            </header>
-                            <div class="card-content">
-                                <div class="content">
-                                    <form method="post" class="form" action="{{ route('auth.login') }}">
-                                        {{ csrf_field() }}
-                                        <div class="field">
-                                            <label class="label">Surel</label>
-                                            <div class="control">
-                                                <input class="input" name="email" type="email" placeholder="e.g. alexsmith@gmail.com" value="{{ old('email') }}">
-                                            </div>
-                                        </div>
-                                        <div class="field">
-                                            <label class="label">Sandi</label>
-                                            <div class="control">
-                                                <input class="input" name="password" type="password" placeholder="Sandi Kamu">
-                                            </div>
-                                        </div>
-                                        <div class="field">
-                                            <button class="button is-family-secondary">
-                                                Masuk
-                                            </button>
-                                        </div>
-                                    </form>
+                <div class="columns is-centered">
+                    <div class="column is-4-tablet is-4-dekstop is-4-widescreen">
+                        <form action="{{ route('auth.login') }}" method="post" class="box">
+                            {{ csrf_field() }}
+                            <div class="field has-text-centered">
+                                Catur Jawa
+                            </div>
+
+                            <div class="field">
+                                <label for="" class="label">Surel</label>
+                                <div class="control has-icons-left">
+                                    <input type="email" name="email" id="" class="input"
+                                           placeholder="e.g. rashiffaza@gmail.com" value="{{ old('email') }}" required>
+                                    <span class="icon">
+                                <i class="fa fa-envelope"></i>
+                                </span>
                                 </div>
                             </div>
-                        </div>
+
+                            <div class="field">
+                                <label for="" class="label">Sandi</label>
+                                <div class="control has-icons-left">
+                                    <input type="password" name="password" id="" class="input" placeholder="*******" required>
+                                    <span class="icon">
+                                            <i class="fa fa-lock"></i>
+                                    </span>
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label for="" class="label">
+                                    <div class="control">
+                                        <input type="checkbox" name="remember_me" id="">
+                                        Ingat Saya
+                                    </div>
+                                </label>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <button class="button is-info is-fullwidth">
+                                        Masuk
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
+    </div>
 @endsection

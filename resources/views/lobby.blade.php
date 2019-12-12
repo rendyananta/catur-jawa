@@ -1,7 +1,7 @@
 @extends('layouts.skeleton')
 
 @section('body')
-    <section class="hero is-primary is-bold is-fullheight">
+    <section class="hero is-link is-bold is-fullheight">
         <div class="hero-head">
             <nav class="navbar">
                 <div class="container">
