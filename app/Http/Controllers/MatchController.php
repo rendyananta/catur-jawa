@@ -36,8 +36,11 @@ class MatchController extends Controller
      */
     public function show(Match $match)
     {
+        $against = $match->inviter_id == auth()->user()->id ? $match->invitee : $match->inviter;
+
         return view('game', [
-            'match' => $match
+            'match' => $match,
+            'against' => $against
         ]);
     }
 

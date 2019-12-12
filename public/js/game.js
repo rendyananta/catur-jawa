@@ -135,17 +135,16 @@ var matchId = canvasElement.getAttribute('data-match-id');
 
 function getMatch(matchId) {
   axios.get("/api/game/".concat(matchId)).then(function (res) {
-    match = res.data.data;
-
-    if (match.state !== undefined && match.state !== null && match.state !== '') {
-      gridsState = match.state;
-    }
+    match = res.data.data; // if (match.state !== undefined && match.state !== null && match.state !== '') {
+    //     gridsState = match.state;
+    // }
 
     playerX = match.inviter_id;
     playerO = match.invitee_id;
     registerMouseEvent();
     createBoard();
     receiveGridUpdate(match);
+    listenForWinner(match);
   });
 }
 
@@ -159,9 +158,7 @@ function sendMovement(payload) {
   axios.patch('/api/game/' + match.id + '/move', {
     from: payload.grid,
     states: gridsState
-  }).then(function (res) {
-    console.log(res.data);
-  });
+  }).then(function (res) {});
 }
 
 function sendGridUpdate(x, y, gridState) {
@@ -270,7 +267,7 @@ function registerMouseEvent() {
         turn = 'X';
         sendGridUpdate(gridIndex.x, gridIndex.y, gridsState[gridIndex.x][gridIndex.y]);
       } else {
-        console.log('not your turn');
+        swal.fire('Bukan giliranmu');
       }
     }
   });
@@ -375,8 +372,10 @@ function redirect(path) {
   window.location.href = "".concat(window.location.protocol, "//").concat(window.location.hostname).concat(port, "/").concat(path);
 }
 
-function listenForWinner() {
+function listenForWinner(match) {
   Echo["private"]("match.".concat(match.id)).listen('WinnerSelected', function (e) {
+    console.log(e);
+
     if (e.match.winner_id === e.match.loser_id) {
       swal.fire('Seri!').then(function (e) {
         redirect('game');
@@ -395,9 +394,7 @@ function listenForWinner() {
 
 
 getUser();
-getMatch(matchId); // End the game
-
-listenForWinner();
+getMatch(matchId);
 
 /***/ }),
 

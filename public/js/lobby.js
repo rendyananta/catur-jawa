@@ -158,7 +158,7 @@ function createRow(users) {
   body.innerHTML = '';
   users.forEach(function (user, index) {
     var tr = document.createElement('tr');
-    tr.innerHTML = "<td>".concat(index + 1, "</td>") + "<td>".concat(user.name, "</td>") + "<td><button class='button is-danger is-small' id=\"invitation-".concat(user.id, "\" data-invitation-id=\"").concat(user.id, "\">Tantang</button></td>");
+    tr.innerHTML = "<td>".concat(index + 1, "</td>") + "<td>".concat(user.name, "</td>") + "<td>".concat(user.win, "</td>") + "<td>".concat(user.lose, "</td>") + "<td>".concat(user.draw, "</td>") + "<td><button class='button is-danger is-small' id=\"invitation-".concat(user.id, "\" data-invitation-id=\"").concat(user.id, "\">Tantang</button></td>");
     body.append(tr);
     var btn = document.getElementById("invitation-".concat(user.id));
     btn.addEventListener('click', function () {
