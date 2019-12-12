@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c6f63d34-b3e0-4a99-a5c5-99b62e9bd09e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/laravel-echo-server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-echo-server.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/game.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/js/lobby.js" beforeDir="false" afterPath="$PROJECT_DIR$/public/js/lobby.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/bootstrap.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Match.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Match.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Providers/EventServiceProvider.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,6 +44,20 @@
         <item name="catur_jawa@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="catur_jawa: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="catur_jawa@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="catur_jawa: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="matches: table" type="dbc44a63:MariaImplModel$Table" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="catur_jawa@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="catur_jawa: schema" type="ebfa3cd1:MariaImplModel$Schema" />
+        <item name="users: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -261,7 +273,7 @@
       <workItem from="1576047748857" duration="14029000" />
       <workItem from="1576064392085" duration="663000" />
       <workItem from="1576118298691" duration="7439000" />
-      <workItem from="1576135243710" duration="3316000" />
+      <workItem from="1576135243710" duration="3759000" />
     </task>
     <task id="LOCAL-00001" summary="add winner checking">
       <created>1576055341442</created>
@@ -305,7 +317,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576137507047</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add winner and loser alert">
+      <created>1576142288181</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1576142288181</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -319,7 +338,8 @@
     <MESSAGE value="solve winner checking" />
     <MESSAGE value="add alert" />
     <MESSAGE value="resolve redirect issue" />
-    <option name="LAST_COMMIT_MESSAGE" value="resolve redirect issue" />
+    <MESSAGE value="add winner and loser alert" />
+    <option name="LAST_COMMIT_MESSAGE" value="add winner and loser alert" />
   </component>
   <component name="WindowStateProjectService">
     <state x="540" y="178" key="#CLI_Interpreters" timestamp="1575720058921">
@@ -350,10 +370,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1575728475931" />
-    <state x="583" y="33" key="CommitChangelistDialog2" timestamp="1576137505995">
+    <state x="583" y="33" key="CommitChangelistDialog2" timestamp="1576142287416">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="583" y="33" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576137505995" />
+    <state x="583" y="33" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576142287416" />
     <state width="1293" height="264" key="GridCell.Tab.0.bottom" timestamp="1576122986424">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -370,18 +390,18 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state width="1293" height="264" key="GridCell.Tab.0.right/0.0.1920.1050@0.0.1920.1050" timestamp="1576122986424" />
-    <state x="758" y="322" key="NewPhpClassDialog" timestamp="1576052581205">
+    <state x="758" y="322" key="NewPhpClassDialog" timestamp="1576142317909">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="758" y="322" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576052581205" />
+    <state x="758" y="322" key="NewPhpClassDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576142317909" />
     <state x="461" y="166" key="SettingsEditor" timestamp="1575723818060">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="166" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1575723818060" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1576137507919">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1576142717534">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576137507919" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576142717534" />
     <state x="636" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576135260713">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>

@@ -17,7 +17,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'avatar'
+        'name', 'email', 'password', 'avatar', 'win', 'lose', 'draw'
     ];
 
     /**
@@ -37,4 +37,19 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function incrementWin()
+    {
+        $this->setAttribute('win', $this->getAttribute('win') + 1);
+    }
+
+    public function incrementLose()
+    {
+        $this->setAttribute('lose', $this->getAttribute('lose') + 1);
+    }
+
+    public function incrementDraw()
+    {
+        $this->setAttribute('draw', $this->getAttribute('draw') + 1);
+    }
 }
