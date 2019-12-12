@@ -16,13 +16,20 @@ use Illuminate\Http\Request;
  */
 class UserController extends Controller
 {
+    /**
+     * UserController constructor.
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:api');
+    }
 
     /**
      * @return \Illuminate\Contracts\Pagination\LengthAwarePaginator
      */
     public function index()
     {
-        return User::query()->paginate();
+        return User::query()->where('id', '<>', auth()->user()->id)->paginate(30);
     }
 
     /**

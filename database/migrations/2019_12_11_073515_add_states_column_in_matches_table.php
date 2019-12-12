@@ -14,7 +14,7 @@ class AddStatesColumnInMatchesTable extends Migration
     public function up()
     {
         Schema::table('matches', function (Blueprint $table) {
-            $table->json('state')->default(null)->after('accepted');
+            $table->json('state')->nullable()->after('accepted');
         });
     }
 

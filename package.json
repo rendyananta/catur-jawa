@@ -21,8 +21,10 @@
         "sass-loader": "^7.1.0"
     },
     "dependencies": {
+        "bulma": "^0.8.0",
         "laravel-echo": "^1.6.1",
         "socket.io-client": "^2.3.0",
+        "sweetalert2": "^9.5.3",
         "vue-template-compiler": "^2.6.10"
     }
 }
