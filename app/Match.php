@@ -24,6 +24,10 @@ class Match extends Model
         'is_draw', 'state'
     ];
 
+    protected $hidden = [
+        'state'
+    ];
+
     public function inviter()
     {
         return $this->belongsTo(User::class, 'inviter_id');

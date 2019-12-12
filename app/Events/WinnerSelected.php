@@ -38,6 +38,6 @@ class WinnerSelected implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('match.' . $this->match);
+        return new PrivateChannel('match.' . $this->match->id);
     }
 }

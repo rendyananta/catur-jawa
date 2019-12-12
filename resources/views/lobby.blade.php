@@ -22,6 +22,9 @@
                                     <tr>
                                         <th>#</th>
                                         <th>Nama</th>
+                                        <th>Menang</th>
+                                        <th>Kalah</th>
+                                        <th>Seri</th>
                                         <th></th>
                                     </tr>
                                     </thead>

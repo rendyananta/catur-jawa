@@ -70,6 +70,9 @@ function createRow(users) {
 
         tr.innerHTML = `<td>${index + 1}</td>` +
             `<td>${user.name}</td>` +
+            `<td>${user.win}</td>` +
+            `<td>${user.lose}</td>` +
+            `<td>${user.draw}</td>` +
             `<td><button class='button is-danger is-small' id="invitation-${user.id}" data-invitation-id="${user.id}">Tantang</button></td>`;
 
         body.append(tr);

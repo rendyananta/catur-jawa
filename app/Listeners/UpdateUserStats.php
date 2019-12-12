@@ -14,36 +14,18 @@ use App\Events\WinnerSelected;
  */
 class UpdateUserStats
 {
-
-    /**
-     * @var WinnerSelected
-     */
-    public $event;
-
-    /**
-     * UpdateUserStats constructor.
-     * @param WinnerSelected $event
-     */
-    public function __construct(WinnerSelected $event)
-    {
-        $this->event = $event;
-    }
-
     /**
      * Handle event
+     * @param WinnerSelected $event
      */
-    public function handle()
+    public function handle(WinnerSelected $event)
     {
-        if ($this->event->match->getAttribute('winner_id') == $this->event->match->getAttribute('loser_id')) {
-            $this->event->match->winner->incrementDraw();
-            $this->event->match->winner->save();
-            $this->event->match->loser->incrementDraw();
-            $this->event->match->loser->save();
+        if ($event->match->getAttribute('winner_id') == $event->match->getAttribute('loser_id')) {
+            $event->match->winner->increment('draw');
+            $event->match->loser->increment('draw');
         } else {
-            $this->event->match->winner->incrementWin();
-            $this->event->match->winner->save();
-            $this->event->match->loser->incrementLose();
-            $this->event->match->loser->save();
+            $event->match->winner->increment('win');
+            $event->match->loser->increment('lose');
         }
     }
 

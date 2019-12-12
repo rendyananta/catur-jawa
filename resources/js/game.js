@@ -35,9 +35,9 @@ function getMatch(matchId) {
         .then(res => {
             match = res.data.data;
 
-            if (match.state !== undefined && match.state !== null && match.state !== '') {
-                gridsState = match.state;
-            }
+            // if (match.state !== undefined && match.state !== null && match.state !== '') {
+            //     gridsState = match.state;
+            // }
 
             playerX = match.inviter_id;
             playerO = match.invitee_id;
@@ -45,7 +45,9 @@ function getMatch(matchId) {
             registerMouseEvent();
             createBoard();
 
-            receiveGridUpdate(match)
+            receiveGridUpdate(match);
+
+            listenForWinner(match);
         })
 }
 
@@ -60,9 +62,7 @@ function sendMovement(payload) {
     axios.patch('/api/game/' + match.id + '/move', {
         from: payload.grid,
         states: gridsState
-    }).then(res => {
-        console.log(res.data)
-    });
+    }).then(res => {});
 }
 
 function sendGridUpdate(x, y, gridState) {
@@ -172,7 +172,7 @@ function registerMouseEvent() {
                 turn = 'X';
                 sendGridUpdate(gridIndex.x, gridIndex.y, gridsState[gridIndex.x][gridIndex.y])
             } else {
-                console.log('not your turn')
+                swal.fire('Bukan giliranmu');
             }
         }
 
@@ -297,9 +297,10 @@ function redirect(path) {
     window.location.href = `${window.location.protocol}//${window.location.hostname}${port}/${path}`
 }
 
-function listenForWinner() {
+function listenForWinner(match) {
     Echo.private(`match.${match.id}`)
         .listen('WinnerSelected', e => {
+            console.log(e);
             if (e.match.winner_id === e.match.loser_id) {
                 swal.fire('Seri!').then(e => {
                     redirect('game')
@@ -319,6 +320,3 @@ function listenForWinner() {
 // Starts the game
 getUser();
 getMatch(matchId);
-
-// End the game
-listenForWinner();
