@@ -15,21 +15,21 @@
                             <div class="field">
                                 <label for="" class="label">Surel</label>
                                 <div class="control has-icons-left">
+                                    <span class="icon">
+                                        <i class="fa fa-envelope"></i>
+                                    </span>
                                     <input type="email" name="email" id="" class="input"
                                            placeholder="e.g. rashiffaza@gmail.com" value="{{ old('email') }}" required>
-                                    <span class="icon">
-                                <i class="fa fa-envelope"></i>
-                                </span>
                                 </div>
                             </div>
 
                             <div class="field">
                                 <label for="" class="label">Sandi</label>
                                 <div class="control has-icons-left">
-                                    <input type="password" name="password" id="" class="input" placeholder="*******" required>
                                     <span class="icon">
                                             <i class="fa fa-lock"></i>
                                     </span>
+                                    <input type="password" name="password" id="" class="input" placeholder="*******" required>
                                 </div>
                             </div>
 
@@ -40,6 +40,10 @@
                                         Ingat Saya
                                     </div>
                                 </label>
+                            </div>
+
+                            <div class="field">
+                                <a href="{{ route('auth.password.forgot.form') }}">Lupa Sandi ?</a>
                             </div>
 
                             <div class="field">

@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c6f63d34-b3e0-4a99-a5c5-99b62e9bd09e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/sass/app.scss" beforeDir="false" afterPath="$PROJECT_DIR$/resources/sass/app.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,7 +275,7 @@
       <workItem from="1576118298691" duration="7439000" />
       <workItem from="1576135243710" duration="3782000" />
       <workItem from="1576149976222" duration="3853000" />
-      <workItem from="1576156402418" duration="6299000" />
+      <workItem from="1576156402418" duration="8297000" />
     </task>
     <task id="LOCAL-00001" summary="add winner checking">
       <created>1576055341442</created>
@@ -356,7 +354,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576162589062</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="resolve forgot password form and reset password form">
+      <created>1576164688058</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1576164688058</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -375,7 +380,8 @@
     <MESSAGE value="resolve winner alert" />
     <MESSAGE value="add user stats info" />
     <MESSAGE value="ui changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="ui changes" />
+    <MESSAGE value="resolve forgot password form and reset password form" />
+    <option name="LAST_COMMIT_MESSAGE" value="resolve forgot password form and reset password form" />
   </component>
   <component name="WindowStateProjectService">
     <state x="540" y="178" key="#CLI_Interpreters" timestamp="1575720058921">
@@ -406,10 +412,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1575728475931" />
-    <state x="583" y="33" key="CommitChangelistDialog2" timestamp="1576162588383">
+    <state x="583" y="33" key="CommitChangelistDialog2" timestamp="1576164686841">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="583" y="33" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576162588383" />
+    <state x="583" y="33" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576164686841" />
     <state width="1293" height="264" key="GridCell.Tab.0.bottom" timestamp="1576122986424">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -434,17 +440,17 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="166" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1575723818060" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1576162589950">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1576164688821">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576162589950" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576164688821" />
     <state x="636" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576156415425">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="636" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576156415425" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1576164404407">
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1576167834661">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1576164404407" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1576167834661" />
   </component>
 </project>
