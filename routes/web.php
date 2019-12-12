@@ -23,6 +23,10 @@ Route::group(['namespace' => 'auth', 'as' => 'auth.'], function () {
     Route::get('/register', 'RegisterController@showRegistrationForm')->name('register.form');
     Route::post('/register', 'RegisterController@register')->name('register');
 
+    Route::get('/password/forgot', 'ForgotPasswordController@showLinkRequestForm')->name('password.forgot.form');
+    Route::post('/password/forgot', 'ForgotPasswordController@sendResetLinkEmail')->name('password.forgot');
+    Route::get('/password/reset', 'ResetPasswordController@showResetForm')->name('password.reset.form');
+    Route::post('/password/reset', 'ResetPasswordController@reset')->name('password.reset');
     Route::get('/logout', 'LoginController@logout')->name('logout');
 });
 
