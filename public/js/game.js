@@ -105,8 +105,8 @@ var canvasElement = document.getElementById('board');
 var canvasContext = canvasElement.getContext('2d');
 var config = {
   canvas: {
-    width: 1440,
-    height: 1440
+    width: 980,
+    height: 980
   },
   board: {
     columns: 40,
@@ -143,8 +143,6 @@ function getMatch(matchId) {
 
     playerX = match.inviter_id;
     playerO = match.invitee_id;
-    console.log(playerX);
-    console.log(playerO);
     registerMouseEvent();
     createBoard();
     receiveGridUpdate(match);
@@ -174,7 +172,6 @@ function sendGridUpdate(x, y, gridState) {
       state: gridState
     }
   };
-  console.log('payload', payload);
   sendMovement(payload);
   Echo["private"]("match.".concat(match.id)).whisper('turn', payload);
 }
@@ -371,11 +368,36 @@ function createBoard() {
   canvasContext.lineTo(outerBox.x, outerBox.yMax);
   canvasContext.closePath();
   canvasContext.stroke();
+}
+
+function redirect(path) {
+  var port = window.location.port !== undefined && window.location.port !== null && window.location.port !== '' ? ":".concat(window.location.port) : '';
+  window.location.href = "".concat(window.location.protocol, "//").concat(window.location.hostname).concat(port, "/").concat(path);
+}
+
+function listenForWinner() {
+  Echo["private"]("match.".concat(match.id)).listen('WinnerSelected', function (e) {
+    if (e.match.winner_id === e.match.loser_id) {
+      swal.fire('Seri!').then(function (e) {
+        redirect('game');
+      });
+    } else if (e.match.winner_id === user.id) {
+      swal.fire('Kamu Menang!').then(function (e) {
+        redirect('game');
+      });
+    } else {
+      swal.fire('Kamu Kalah!').then(function (e) {
+        redirect('game');
+      });
+    }
+  });
 } // Starts the game
 
 
 getUser();
-getMatch(matchId);
+getMatch(matchId); // End the game
+
+listenForWinner();
 
 /***/ }),
 

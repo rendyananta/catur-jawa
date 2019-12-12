@@ -101,13 +101,18 @@ function accept(match, acceptValue) {
   });
 }
 
+function redirect(path) {
+  var port = window.location.port !== undefined && window.location.port !== null && window.location.port !== '' ? ":".concat(window.location.port) : '';
+  window.location.href = "".concat(window.location.protocol, "//").concat(window.location.hostname).concat(port, "/").concat(path);
+}
+
 function invitationAccepted(match) {
   Echo["private"]("invitation_status.".concat(match.id)).listen('InvitationAccepted', function (e) {
     if (e.match.accepted) {
       swal.fire({
         title: 'Tantangan diterima'
       }).then(function () {
-        window.location.href = "".concat(window.location.host, "/game/").concat(match.id);
+        redirect("game/".concat(match.id));
       });
     } else {
       swal.fire({
@@ -131,7 +136,7 @@ function waitForInvitations() {
       }).then(function (result) {
         if (result.value) {
           accept(e.match, 1);
-          window.location.href = "".concat(window.location.host, "/game/").concat(e.match.id);
+          redirect("game/".concat(e.match.id));
         } else if (result.dismiss === swal.DismissReason.cancel) {
           accept(e.match, 0);
         } else {
