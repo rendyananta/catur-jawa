@@ -6,6 +6,11 @@ function accept(match, acceptValue) {
     })
 }
 
+function redirect(path) {
+    const port = window.location.port !== undefined && window.location.port !== null && window.location.port !== '' ? `:${window.location.port}` : '';
+    window.location.href = `${window.location.protocol}//${window.location.hostname}${port}/${path}`
+}
+
 function invitationAccepted(match) {
     Echo.private(`invitation_status.${match.id}`)
         .listen('InvitationAccepted', e => {
@@ -13,7 +18,7 @@ function invitationAccepted(match) {
                 swal.fire({
                     title: 'Tantangan diterima'
                 }).then(function () {
-                    window.location.href = `${window.location.host}/game/${match.id}`
+                    redirect(`game/${match.id}`);
                 });
             } else {
                 swal.fire({
@@ -38,7 +43,7 @@ function waitForInvitations() {
                 }).then((result) => {
                     if (result.value) {
                         accept(e.match, 1);
-                        window.location.href = `${window.location.host}/game/${e.match.id}`;
+                        redirect(`game/${e.match.id}`);
                     } else if (result.dismiss === swal.DismissReason.cancel) {
                         accept(e.match, 0)
                     } else {

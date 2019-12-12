@@ -3,8 +3,8 @@ let canvasContext = canvasElement.getContext('2d');
 
 let config = {
     canvas: {
-        width: 1440,
-        height: 1440
+        width: 980,
+        height: 980
     },
     board: {
         columns: 40,
