@@ -3,14 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c6f63d34-b3e0-4a99-a5c5-99b62e9bd09e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/confirm.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/passwords/email.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/auth/register.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/register.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/game.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/game.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/lobby.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/lobby.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,13 +41,6 @@
         <item name="catur_jawa@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="catur_jawa: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="catur_jawa@localhost" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="catur_jawa: schema" type="ebfa3cd1:MariaImplModel$Schema" />
-        <item name="matches: table" type="dbc44a63:MariaImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -296,7 +281,7 @@
       <workItem from="1576135243710" duration="3782000" />
       <workItem from="1576149976222" duration="3853000" />
       <workItem from="1576156402418" duration="9045000" />
-      <workItem from="1576191350594" duration="3998000" />
+      <workItem from="1576191350594" duration="4389000" />
     </task>
     <task id="LOCAL-00001" summary="add winner checking">
       <created>1576055341442</created>
@@ -389,7 +374,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576169519798</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="resolve update user profile">
+      <created>1576195577267</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1576195577267</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -410,7 +402,8 @@
     <MESSAGE value="ui changes" />
     <MESSAGE value="resolve forgot password form and reset password form" />
     <MESSAGE value="update form label" />
-    <option name="LAST_COMMIT_MESSAGE" value="update form label" />
+    <MESSAGE value="resolve update user profile" />
+    <option name="LAST_COMMIT_MESSAGE" value="resolve update user profile" />
   </component>
   <component name="WindowStateProjectService">
     <state x="540" y="178" key="#CLI_Interpreters" timestamp="1575720058921">
@@ -441,10 +434,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1575728475931" />
-    <state x="583" y="33" key="CommitChangelistDialog2" timestamp="1576169519335">
+    <state x="583" y="33" key="CommitChangelistDialog2" timestamp="1576195576454">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="583" y="33" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576169519335" />
+    <state x="583" y="33" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576195576454" />
     <state width="1293" height="264" key="GridCell.Tab.0.bottom" timestamp="1576122986424">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -473,10 +466,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="166" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1575723818060" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1576169521007">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1576195580471">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576169521007" />
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576195580471" />
     <state x="636" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576191356746">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
