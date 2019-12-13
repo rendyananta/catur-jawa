@@ -3,6 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="c6f63d34-b3e0-4a99-a5c5-99b62e9bd09e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/laravel-echo-server.lock" beforeDir="false" afterPath="$PROJECT_DIR$/laravel-echo-server.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/js/game.js" beforeDir="false" afterPath="$PROJECT_DIR$/resources/js/game.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/auth/login.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/auth/login.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/game.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/game.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -248,12 +252,6 @@
                 <item name="Compose: docker-compose.yaml" type="9fbbdea:ServiceModel$ServiceNode" />
                 <item name="php" type="9fbbdea:ServiceModel$ServiceNode" />
               </path>
-              <path>
-                <item name="services root" type="e789fda9:ObjectUtils$Sentinel" />
-                <item name="Docker" type="9fbbdea:ServiceModel$ServiceNode" />
-                <item name="Compose: docker-compose.yaml" type="9fbbdea:ServiceModel$ServiceNode" />
-                <item name="php-worker" type="9fbbdea:ServiceModel$ServiceNode" />
-              </path>
             </expand>
             <select />
           </treeState>
@@ -281,7 +279,8 @@
       <workItem from="1576135243710" duration="3782000" />
       <workItem from="1576149976222" duration="3853000" />
       <workItem from="1576156402418" duration="9045000" />
-      <workItem from="1576191350594" duration="4389000" />
+      <workItem from="1576191350594" duration="5028000" />
+      <workItem from="1576199354599" duration="1971000" />
     </task>
     <task id="LOCAL-00001" summary="add winner checking">
       <created>1576055341442</created>
@@ -381,7 +380,14 @@
       <option name="project" value="LOCAL" />
       <updated>1576195577267</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="update layout">
+      <created>1576195777094</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1576195777094</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -403,7 +409,8 @@
     <MESSAGE value="resolve forgot password form and reset password form" />
     <MESSAGE value="update form label" />
     <MESSAGE value="resolve update user profile" />
-    <option name="LAST_COMMIT_MESSAGE" value="resolve update user profile" />
+    <MESSAGE value="update layout" />
+    <option name="LAST_COMMIT_MESSAGE" value="update layout" />
   </component>
   <component name="WindowStateProjectService">
     <state x="540" y="178" key="#CLI_Interpreters" timestamp="1575720058921">
@@ -434,10 +441,10 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="690" y="279" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1575728475931" />
-    <state x="583" y="33" key="CommitChangelistDialog2" timestamp="1576195576454">
+    <state x="583" y="33" key="CommitChangelistDialog2" timestamp="1576195776527">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="583" y="33" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576195576454" />
+    <state x="583" y="33" key="CommitChangelistDialog2/0.0.1920.1050@0.0.1920.1050" timestamp="1576195776527" />
     <state width="1293" height="264" key="GridCell.Tab.0.bottom" timestamp="1576122986424">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
@@ -466,17 +473,17 @@
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
     <state x="461" y="166" key="SettingsEditor/0.0.1920.1050@0.0.1920.1050" timestamp="1575723818060" />
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1576195580471">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2" timestamp="1576195778940">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576195580471" />
-    <state x="636" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576191356746">
+    <state x="552" y="253" key="Vcs.Push.Dialog.v2/0.0.1920.1050@0.0.1920.1050" timestamp="1576195778940" />
+    <state x="636" y="347" key="com.intellij.ide.util.TipDialog" timestamp="1576199393555">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="636" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576191356746" />
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1576195028443">
+    <state x="636" y="347" key="com.intellij.ide.util.TipDialog/0.0.1920.1050@0.0.1920.1050" timestamp="1576199393555" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup" timestamp="1576200981628">
       <screen x="0" y="0" width="1920" height="1050" />
     </state>
-    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1576195028443" />
+    <state x="623" y="227" width="672" height="678" key="search.everywhere.popup/0.0.1920.1050@0.0.1920.1050" timestamp="1576200981628" />
   </component>
 </project>

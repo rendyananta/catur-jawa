@@ -23,12 +23,15 @@ let gridsState = [...new Array(config.board.rows)].map(() => Array(config.board.
     user_id: null
 }));
 
-let turn = 'X';
+let turn = null;
 let user = null;
 let match = null;
 let playerX = null;
 let playerO = null;
 let matchId = canvasElement.getAttribute('data-match-id');
+
+const labelTurn = document.getElementById('turn');
+const labelNotTurn = document.getElementById('not-turn');
 
 function getMatch(matchId) {
     axios.get(`/api/game/${matchId}`)
@@ -41,6 +44,8 @@ function getMatch(matchId) {
 
             playerX = match.inviter_id;
             playerO = match.invitee_id;
+
+            setTurn('X');
 
             registerMouseEvent();
             createBoard();
@@ -79,6 +84,20 @@ function sendGridUpdate(x, y, gridState) {
         .whisper('turn', payload)
 }
 
+function setTurn (content) {
+    turn = content;
+
+    console.log(turn, isPlayerX());
+
+    if ((isPlayerX() && turn === 'X') || isPlayerO() && turn === 'O') {
+        labelNotTurn.style.visibility = 'hidden';
+        labelTurn.style.visibility = 'visible'
+    } else if ((isPlayerX() && turn === 'O') || (isPlayerO() && turn === 'X')) {
+        labelNotTurn.style.visibility = 'visible';
+        labelTurn.style.visibility = 'hidden'
+    }
+}
+
 function isPlayerX() {
     return match.inviter_id === user.id
 }
@@ -95,10 +114,10 @@ function receiveGridUpdate(match) {
 
             if (isPlayerX() && turn === 'O') {
                 drawPlayerO(grids[e.grid.x][e.grid.y]);
-                turn = 'X'
+                setTurn('X');
             } else if (isPlayerO() && turn === 'X') {
                 drawPlayerX(grids[e.grid.x][e.grid.y]);
-                turn = 'O'
+                setTurn('O');
             }
         })
 }
@@ -161,7 +180,7 @@ function registerMouseEvent() {
                     user: playerX
                 };
                 drawSquare(grid, 'X');
-                turn = 'O';
+                setTurn('O');
                 sendGridUpdate(gridIndex.x, gridIndex.y, gridsState[gridIndex.x][gridIndex.y])
             } else if (isPlayerO() && turn === 'O') {
                 gridsState[gridIndex.x][gridIndex.y] = {
@@ -169,7 +188,7 @@ function registerMouseEvent() {
                     user: playerO
                 };
                 drawSquare(grid, 'O');
-                turn = 'X';
+                setTurn('X');
                 sendGridUpdate(gridIndex.x, gridIndex.y, gridsState[gridIndex.x][gridIndex.y])
             } else {
                 swal.fire('Bukan giliranmu');
