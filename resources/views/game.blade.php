@@ -1,6 +1,6 @@
-@extends('layouts.skeleton')
+@extends('layouts.dashboard')
 
-@section('body')
+@section('content')
     <div class="container">
         <div class="columns">
             <div class="column is-10">
@@ -14,7 +14,7 @@
                     </div>
                     <div class="card-content">
                         <figure class="image is-128x128">
-                            <img class="is-rounded" src="https://bulma.io/images/placeholders/128x128.png">
+                            <img class="is-rounded" src="{{ $against->avatar_url }}">
                         </figure>
                         <br>
                         <h3 class="modal-card-title">Stats</h3>

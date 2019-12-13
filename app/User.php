@@ -5,6 +5,7 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Illuminate\Support\Facades\Storage;
 use Laravel\Passport\HasApiTokens;
 
 class User extends Authenticatable
@@ -37,4 +38,18 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
+    /**
+     * avatar_url Accessor
+     *
+     * @return \Illuminate\Contracts\Routing\UrlGenerator|string
+     * @throws \Illuminate\Contracts\Filesystem\FileNotFoundException
+     */
+    public function getAvatarUrlAttribute()
+    {
+        return empty($this->getOriginal('avatar'))
+            ? url('images/avatar-placeholder.png')
+            : url(asset('storage/' . $this->getOriginal('avatar')));
+    }
 }

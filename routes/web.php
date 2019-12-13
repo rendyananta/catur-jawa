@@ -30,7 +30,12 @@ Route::group(['namespace' => 'auth', 'as' => 'auth.'], function () {
     Route::get('/logout', 'LoginController@logout')->name('logout');
 });
 
-Route::group(['middleware' => [], 'prefix' => 'game', 'as' => 'game.'], function () {
+Route::group(['middleware' => 'auth', 'prefix' => 'game', 'as' => 'game.'], function () {
     Route::get('/', 'MatchController@index')->name('lobby');
     Route::get('{match}', 'MatchController@show')->name('room');
+});
+
+Route::group(['middleware' => 'auth', 'prefix' => 'profile', 'as' => 'profile.'], function () {
+    Route::get('edit', 'ProfileController@edit')->name('edit');
+    Route::put('update', 'ProfileController@update')->name('update');
 });
